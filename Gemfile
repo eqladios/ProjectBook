@@ -49,6 +49,9 @@ group :development, :test do
   gem 'sqlite3'
   
   gem 'pry'
+  gem 'openlibrary'
+  gem 'isbndb', '~> 2.0.0'
+
   
 end
 
