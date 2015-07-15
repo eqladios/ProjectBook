@@ -1,0 +1,15 @@
+testing specs for books:
+  string :isbn
+  string :title
+  integer :edition
+  string :publisher
+  text :description
+  
+  -title should be present 
+  -title between 5 chars to 100 chars
+  -description should be present
+  -description between 5 chars to 200 chars
+  -price must be present
+  -price must be between 30 to 2000
+  -user_id must be present
+  
