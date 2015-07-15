@@ -1,18 +1,21 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  @books = nil
+  @product = nil
+  @products = nil
 
   # GET /products
   # GET /products.json
   def index
-    @books = GoogleBooks.search('The Great Gatsby')
-    @products = @books
+    # @books = GoogleBooks.search('The Great Gatsby')
+    @products = Product.all
   end
   
   # GET /products/searching
-  def search
-      @books = GoogleBooks.search(params[:q])
-      @products = @books
-  end
+  # def search
+  #     @books = GoogleBooks.search(params[:q])
+  #     @products = @books
+  # end
 
   # GET /products/1
   # GET /products/1.json

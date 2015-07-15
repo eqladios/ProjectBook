@@ -15,7 +15,8 @@
   </thead>
 
   <tbody>
-    <% @products.each do |item| %>
+    <% @books = GoogleBooks.search(params[:q]) %>
+    <% @books.each do |item| %>
       <tr>
         <td><%= item.title %></td>
         <td><%= item.isbn %></td>
