@@ -35,7 +35,7 @@ gem 'sass-rails', '>= 3.2'
 
 
 
-group :development, :test do
+#group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -60,7 +60,7 @@ group :development, :test do
   gem "thin",     "~> 1.6"
   gem "foreman",  "~> 0.51"
     
-end
+#end
 
 group :production do
   
