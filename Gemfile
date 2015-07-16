@@ -35,7 +35,7 @@ gem 'sass-rails', '>= 3.2'
 
 
 
-#group :development, :test do
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -51,7 +51,6 @@ gem 'sass-rails', '>= 3.2'
   gem 'pry'
   gem 'openlibrary'
   gem 'isbndb', '~> 2.0.0'
-  gem 'googlebooks'
   gem "asin",     "~> 2.0"
   #gem "curb",     "~> 0.8"
   
@@ -60,11 +59,12 @@ gem 'sass-rails', '>= 3.2'
   gem "thin",     "~> 1.6"
   gem "foreman",  "~> 0.51"
     
-#end
+end
 
 group :production do
   
   gem 'pg'
   gem 'rails_12factor'
+  gem 'googlebooks'
   
 end
