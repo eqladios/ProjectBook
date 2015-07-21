@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715072537) do
+ActiveRecord::Schema.define(version: 20150719133809) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "image_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn"
@@ -21,6 +29,41 @@ ActiveRecord::Schema.define(version: 20150715072537) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "books_dbs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "isbn"
+    t.string   "author"
+    t.string   "publisher"
+    t.string   "rating"
+    t.text     "descripton"
+    t.string   "image_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "infobooks", force: :cascade do |t|
+    t.string   "title"
+    t.string   "isbn"
+    t.string   "author"
+    t.string   "publisher"
+    t.string   "rating"
+    t.text     "descripton"
+    t.string   "image_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "title"
+    t.string   "isbn"
+    t.string   "authors"
+    t.string   "publisher"
+    t.integer  "average_rating"
+    t.string   "image_link"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "products", force: :cascade do |t|

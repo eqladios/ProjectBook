@@ -1,4 +1,4 @@
-<%= form_tag("/search", method: "get") do %>
+<%= form_tag("/infobooks", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
@@ -13,7 +13,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @books = GoogleBooks.search(params[:q]) %>
     <% @books.each do |item| %>
@@ -21,6 +21,7 @@
         <td><%= item.title %></td>
         <td><%= item.isbn %></td>
         <td><%= image_tag(item.image_link)%></td>
+        <td><%= link_to 'Show', article %></td>
       </tr>
     <% end %>
   </tbody>

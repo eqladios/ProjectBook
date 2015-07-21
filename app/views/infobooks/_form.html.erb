@@ -1,0 +1,45 @@
+<%= form_for(@infobook) do |f| %>
+  <% if @infobook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@infobook.errors.count, "error") %> prohibited this infobook from being saved:</h2>
+
+      <ul>
+      <% @infobook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :isbn %><br>
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :descripton %><br>
+    <%= f.text_area :descripton %>
+  </div>
+  <div class="field">
+    <%= f.label :image_link %><br>
+    <%= f.text_field :image_link %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

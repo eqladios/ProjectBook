@@ -17,7 +17,8 @@
       <tr>
         <td><%= item.title %></td>
         <td><%= item.isbn %></td>
-        <td>:q<%= image_tag(item.image_link)%></td>
+        <td><%= image_tag(item.image_link)%></td>
+        <td><%= link_to 'Edit', search_product_path(@item) %></td>
       </tr>
     <% end %>
   </tbody>

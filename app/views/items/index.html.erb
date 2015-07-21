@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Isbn</th>
+      <th>Authors</th>
+      <th>Publisher</th>
+      <th>Average rating</th>
+      <th>Image link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items = GoogleBooks.search(params[:q], {:count => 9}) %>
+    <% @items.each do |item| %>
+      <%break if item.isbn.nil? %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.isbn %></td>
+        <td><%= item.authors %></td>
+        <td><%= item.publisher %></td>
+        <td><%= item.average_rating %></td>
+        <td><%= link_to image_tag(item.image_link), item_path(item.isbn) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

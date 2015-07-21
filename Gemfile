@@ -33,7 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '>= 3.2'
 
-
+gem 'googlebooks'
+gem 'omniauth-facebook'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,6 +66,5 @@ group :production do
   
   gem 'pg'
   gem 'rails_12factor'
-  gem 'googlebooks'
   
 end

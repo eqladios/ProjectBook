@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag("/infobooks", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Isbn</th>
+      <th>Author</th>
+      <th>Publisher</th>
+      <th>Rating</th>
+      <th>Descripton</th>
+      <th>Image link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results = GoogleBooks.search(params[:q]) %>
+    <% @results.each do |item| %>
+    <tr>
+        <td><%= item.title %></td>
+        <td><%= item.isbn %></td>
+        <td><%= item.authors %></td>
+        <td><%= item.publisher %></td>
+        <td><%= item.average_rating %></td>
+        <td><%= link_to image_tag(item.image_link), infobooks_path(item) %></td>
+        <td><%= link_to 'Show' , infobooks_path(@results.first) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
