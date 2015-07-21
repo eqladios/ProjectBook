@@ -240,6 +240,7 @@ DEPENDENCIES
   isbndb (~> 2.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth
   omniauth-facebook
   openlibrary
   pg
