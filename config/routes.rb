@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  resources :accounts, only: [:index] do 
+    collection do
+      post :import
+    end
+  end
+  
   resources :items
   resources :infobooks
   resources :books_dbs

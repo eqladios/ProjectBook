@@ -16,9 +16,9 @@
   </thead>
 
   <tbody>
-    <% @items = GoogleBooks.search(params[:q], {:count => 9}) %>
+    <% @items = GoogleBooks.search(params[:q], {:count => 18}) %>
     <% @items.each do |item| %>
-      <%break if item.isbn.nil? %>
+      <%unless item.isbn.nil? || item.image_link.nil? %>
       <tr>
         <td><%= item.title %></td>
         <td><%= item.isbn %></td>
@@ -26,8 +26,10 @@
         <td><%= item.publisher %></td>
         <td><%= item.average_rating %></td>
         <td><%= link_to image_tag(item.image_link), item_path(item.isbn) %></td>
+        <td><%= item.categories %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 

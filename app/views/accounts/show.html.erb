@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @account.title %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @account.isbn %>
+</p>
+
+<p>
+  <strong>Authors:</strong>
+  <%= @account.authors %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @account.publisher %>
+</p>
+
+<p>
+  <strong>Average rating:</strong>
+  <%= @account.average_rating %>
+</p>
+
+<p>
+  <strong>Image link:</strong>
+  <%= @account.image_link %>
+</p>
+
+<p>
+  <strong>Categories:</strong>
+  <%= @account.categories %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Isbn</th>
+      <th>Authors</th>
+      <th>Publisher</th>
+      <th>Average rating</th>
+      <th>Image link</th>
+      <th>Categories</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.title %></td>
+        <td><%= account.isbn %></td>
+        <td><%= account.authors %></td>
+        <td><%= account.publisher %></td>
+        <td><%= account.average_rating %></td>
+        <td><%= image_tag(account.image_link) %></td>
+        <td><%= account.categories %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
